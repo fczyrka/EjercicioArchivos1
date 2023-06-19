@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ejercicio_de_lectura_de_2_archivos
 {
-    
+
     class Program
     {
 
@@ -28,32 +28,55 @@ namespace Ejercicio_de_lectura_de_2_archivos
 
         static void Main(string[] args)
         {
-            String Archivo = "archivos\\Datos1.txt";
+
+            String Archivo = "C:\\Users\\Emi\\source\\repos\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\Datos1.txt";
             Datos1 = File.ReadAllLines(Archivo);
-            String Archivo2 = "archivos\\Datos2.txt";
+            String Archivo2 = "C:\\Users\\Emi\\source\\repos\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\Datos2.txt";
             Datos2 = File.ReadAllLines(Archivo2);
 
             ListaCompleta = new Alumno[Datos1.Length];
 
-            int indicador = 0;
-            int indicador2 = 0;
-
             for (int linea = 0; linea < Datos1.Length; linea++)
             {
-               indicador = 0;
-               indicador2 = 1;
-               DatosSeparados = Datos1[linea].Split(",");
-               DatosSeparados2 = Datos2[linea].Split(",");
-               ListaCompleta[linea] = new Alumno();
-               ListaCompleta[linea].Nombre = DatosSeparados[indicador];
-               ListaCompleta[linea].Edad = Convert.ToInt32(DatosSeparados2[indicador2]);
-               indicador++;
-               indicador2++;
-               ListaCompleta[linea].Nota = Convert.ToInt32(DatosSeparados[indicador]);
-               ListaCompleta[linea].Ciudad = DatosSeparados2[indicador2];
+                DatosSeparados = Datos1[linea].Split(",");
+
+                Alumno alumnoActual = new Alumno();
+                alumnoActual.Nombre = DatosSeparados[0];
+                alumnoActual.Nota = Convert.ToInt32(DatosSeparados[1]);
+
+                ListaCompleta[linea] = alumnoActual;
             }
+
+            Alumno alumnoConMayorEdad = ListaCompleta[0];
+            for (int AlumnoActual = 0; AlumnoActual < ListaCompleta.Length; AlumnoActual++)
+            {
+                Alumno alumnoAlCualCargarleMasDatos = ListaCompleta[AlumnoActual];
+
+                for (int PosicionArchivo2 = 0; PosicionArchivo2 < Datos2.Length; PosicionArchivo2++)
+                {
+                    DatosSeparados2 = Datos2[PosicionArchivo2].Split(",");
+                    
+                    if (DatosSeparados2[0] == alumnoAlCualCargarleMasDatos.Nombre)
+                    {
+                        alumnoAlCualCargarleMasDatos.Edad = Convert.ToInt32(DatosSeparados2[1]);
+                        alumnoAlCualCargarleMasDatos.Ciudad = DatosSeparados2[2];
+                    }
+                }
+
+                if (alumnoConMayorEdad.Edad < alumnoAlCualCargarleMasDatos.Edad)
+                {
+                    alumnoConMayorEdad = alumnoAlCualCargarleMasDatos;
+                }
+            }
+
+            // imprimir el alumno de mayor edad
+            
+
             ImprimiryGuardar();
+
         }
+            
+        
 
         public class Alumno
         {
@@ -81,27 +104,28 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 Console.WriteLine("    ---------------------------------     ");
             }
 
-            using (StreamWriter writer = new StreamWriter("C:\\Users\\matia\\source\\repos\\Ejercicio de lectura de 2 archivos\\Listado De Estudiantes.txt"))
+            using (StreamWriter writer = new StreamWriter("C:\\Users\\Emi\\source\\repos\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\Listado De Estudiantes.txt"))
             {
-                
+
+                writer.WriteLine("      ");
+                writer.WriteLine("      ");
+                writer.WriteLine("               Listado de Estudiantes ");
+                writer.WriteLine("      ");
+                writer.WriteLine("      ");
+                for (int vueltas = 0; vueltas < ListaCompleta.Length; vueltas++)
+                {
+                    writer.WriteLine("    Estudiante:   " + ListaCompleta[vueltas].Nombre);
+                    writer.WriteLine("    Calificación: " + ListaCompleta[vueltas].Nota);
+                    writer.WriteLine("    Edad:         " + ListaCompleta[vueltas].Edad + " años ");
+                    writer.WriteLine("    Ciudad:       " + ListaCompleta[vueltas].Ciudad);
                     writer.WriteLine("      ");
-                    writer.WriteLine("      ");
-                    writer.WriteLine("               Listado de Estudiantes ");
-                    writer.WriteLine("      ");
-                    writer.WriteLine("      ");
-                    for (int vueltas = 0; vueltas < ListaCompleta.Length; vueltas++)
-                    {
-                        writer.WriteLine("    Estudiante:   " + ListaCompleta[vueltas].Nombre);
-                        writer.WriteLine("    Calificación: " + ListaCompleta[vueltas].Nota);
-                        writer.WriteLine("    Edad:         " + ListaCompleta[vueltas].Edad + " años ");
-                        writer.WriteLine("    Ciudad:       " + ListaCompleta[vueltas].Ciudad);
-                        writer.WriteLine("      ");
-                        writer.WriteLine("    ---------------------------------     ");
-                    }
+                    writer.WriteLine("    ---------------------------------     ");
+                }
                 writer.Close();
             }
         }
 
+        
 
     }
 }

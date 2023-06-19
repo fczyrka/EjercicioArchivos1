@@ -1,0 +1,29 @@
+      
+      
+               Listado de Estudiantes 
+      
+      
+    Estudiante:   Juan Pérez
+    Calificación: 85
+    Edad:         20 años 
+    Ciudad:       Madrid
+      
+    ---------------------------------     
+    Estudiante:   María Gómez
+    Calificación: 92
+    Edad:         0 años 
+    Ciudad:       
+      
+    ---------------------------------     
+    Estudiante:   Carlos Rodríguez
+    Calificación: 78
+    Edad:         19 años 
+    Ciudad:       Barcelona
+      
+    ---------------------------------     
+    Estudiante:   Laura Sánchez
+    Calificación: 95
+    Edad:         21 años 
+    Ciudad:       Sevilla
+      
+    ---------------------------------     
