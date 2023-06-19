@@ -1,0 +1,4 @@
+Juan Pérez,20,Madrid
+Carlos Rodríguez,19,Barcelona
+Laura Sánchez,21,Sevilla
+Pedro González,22,Valencia
