@@ -29,9 +29,9 @@ namespace Ejercicio_de_lectura_de_2_archivos
         static void Main(string[] args)
         {
 
-            String Archivo = "C:\\Users\\Emi\\source\\repos\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\Datos1.txt";
+            String Archivo = "C:\\Users\\matia\\Source\\Repos\\fczyrka\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\datos1.txt";
             Datos1 = File.ReadAllLines(Archivo);
-            String Archivo2 = "C:\\Users\\Emi\\source\\repos\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\Datos2.txt";
+            String Archivo2 = "C:\\Users\\matia\\Source\\Repos\\fczyrka\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\datos2.txt";
             Datos2 = File.ReadAllLines(Archivo2);
 
             ListaCompleta = new Alumno[Datos1.Length];
@@ -104,7 +104,7 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 Console.WriteLine("    ---------------------------------     ");
             }
 
-            using (StreamWriter writer = new StreamWriter("C:\\Users\\Emi\\source\\repos\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\Listado De Estudiantes.txt"))
+            using (StreamWriter writer = new StreamWriter("C:\\Users\\matia\\Source\\Repos\\fczyrka\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\Listado De Estudiantes.txt"))
             {
 
                 writer.WriteLine("      ");
