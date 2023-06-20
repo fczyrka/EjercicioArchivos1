@@ -55,7 +55,7 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 for (int PosicionArchivo2 = 0; PosicionArchivo2 < Datos2.Length; PosicionArchivo2++)
                 {
                     DatosSeparados2 = Datos2[PosicionArchivo2].Split(",");
-                    
+
                     if (DatosSeparados2[0] == alumnoAlCualCargarleMasDatos.Nombre)
                     {
                         alumnoAlCualCargarleMasDatos.Edad = Convert.ToInt32(DatosSeparados2[1]);
@@ -70,13 +70,13 @@ namespace Ejercicio_de_lectura_de_2_archivos
             }
 
             // imprimir el alumno de mayor edad
-            
 
+            OrdenarAlfabeticamente();
             ImprimiryGuardar();
 
         }
-            
-        
+
+
 
         public class Alumno
         {
@@ -86,6 +86,24 @@ namespace Ejercicio_de_lectura_de_2_archivos
             public string Ciudad;
         }
 
+        static void OrdenarAlfabeticamente()
+        {
+            for (int PosicionQueVoyAComparar = 0; PosicionQueVoyAComparar < ListaCompleta.Length;PosicionQueVoyAComparar++) 
+            {
+                Alumno AlumnoActual = ListaCompleta[PosicionQueVoyAComparar];
+                for (int ConLoQueEstoyComparando = 0; ConLoQueEstoyComparando < ListaCompleta.Length - 1;ConLoQueEstoyComparando++)
+                {
+                    Alumno AlumnoConElQueComparo = ListaCompleta[ConLoQueEstoyComparando];
+                    if (AlumnoActual.Nombre.CompareTo(AlumnoConElQueComparo.Nombre) > 0)
+                    {
+                        Alumno Temporal = AlumnoActual;
+                        ListaCompleta[PosicionQueVoyAComparar] = AlumnoConElQueComparo;
+                        ListaCompleta[ConLoQueEstoyComparando] = Temporal;
+                        AlumnoActual = AlumnoConElQueComparo; 
+                    }
+                }
+            }
+        }
 
         static void ImprimiryGuardar()
         {
