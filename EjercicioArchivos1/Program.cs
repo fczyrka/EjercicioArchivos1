@@ -99,7 +99,8 @@ namespace Ejercicio_de_lectura_de_2_archivos
                         Alumno Temporal = AlumnoActual;
                         ListaCompleta[PosicionQueVoyAComparar] = AlumnoConElQueComparo;
                         ListaCompleta[ConLoQueEstoyComparando] = Temporal;
-                        AlumnoActual = AlumnoConElQueComparo; 
+                        AlumnoActual = AlumnoConElQueComparo; // Acá me costò darme cuenta de cambiar el AlumnoAcutal (osea el que toma para compararlo con los otros)
+                                                              // una vez que lo reubicó.  Porque me lo seguía comparando y me salían resultados repetidos
                     }
                 }
             }
