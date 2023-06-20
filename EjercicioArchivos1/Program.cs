@@ -88,19 +88,24 @@ namespace Ejercicio_de_lectura_de_2_archivos
 
         static void OrdenarAlfabeticamente()
         {
-            for (int PosicionQueVoyAComparar = 0; PosicionQueVoyAComparar < ListaCompleta.Length;PosicionQueVoyAComparar++) 
+            // en este primer for, la variable no la vamos a usar, es solo para que de las suficientes vueltas y en cada vuelta se haga lo del for que está dentro
+            for (int i = 0; i < ListaCompleta.Length;i++) 
             {
-                Alumno AlumnoActual = ListaCompleta[PosicionQueVoyAComparar];
-                for (int ConLoQueEstoyComparando = 0; ConLoQueEstoyComparando < ListaCompleta.Length - 1;ConLoQueEstoyComparando++)
+                // acá hago hasta -2 porque voy a comparar con el siguiente, entonces sinó me fallaría al final
+                for (int posicionAComparar = 0; posicionAComparar < ListaCompleta.Length - 2;posicionAComparar++)
                 {
-                    Alumno AlumnoConElQueComparo = ListaCompleta[ConLoQueEstoyComparando];
-                    if (AlumnoActual.Nombre.CompareTo(AlumnoConElQueComparo.Nombre) > 0)
+                    //acá pongo directamente los arrays porque me queda mas claro, porque sinó es mas dificil de entender
+                    if (ListaCompleta[posicionAComparar].Nombre.CompareTo(ListaCompleta[posicionAComparar+1].Nombre) > 0)
                     {
-                        Alumno Temporal = AlumnoActual;
-                        ListaCompleta[PosicionQueVoyAComparar] = AlumnoConElQueComparo;
-                        ListaCompleta[ConLoQueEstoyComparando] = Temporal;
+                        Alumno Temporal = ListaCompleta[posicionAComparar+1];
+                        ListaCompleta[posicionAComparar+1] = ListaCompleta[posicionAComparar];
+                        ListaCompleta[posicionAComparar] = Temporal;
+
+                        /*
+                         * Esto no va, es medio un parche que armaste por como armaste la lógica, no está mal, pero medio que lo supercomplicaste
                         AlumnoActual = AlumnoConElQueComparo; // Acá me costò darme cuenta de cambiar el AlumnoAcutal (osea el que toma para compararlo con los otros)
                                                               // una vez que lo reubicó.  Porque me lo seguía comparando y me salían resultados repetidos
+                        */
                     }
                 }
             }
