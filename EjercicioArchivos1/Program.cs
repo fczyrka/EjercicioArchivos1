@@ -14,6 +14,7 @@ namespace Ejercicio_de_lectura_de_2_archivos
         static string[] DatosSeparados;
         static string[] DatosSeparados2;
         static int EleccionDelUsuario = 0;
+        static int seleccion = 0;
 
         static void Main(string[] args)
         {
@@ -124,10 +125,12 @@ namespace Ejercicio_de_lectura_de_2_archivos
             {
                 Console.WriteLine(" Presione " + (i+1) + " para editar datos de " + ListaCompleta[i].Nombre);               
             }
-            int seleccion = 0;
+            
             seleccion = Convert.ToInt32(Console.ReadLine());
+            Alumno AlumnoElegido = ListaCompleta[seleccion - 1];
             Console.Clear();
-
+            EdiciónDeDatos(AlumnoElegido);
+           /* 
             if (seleccion == 1)
             {
                 Alumno AlumnoElegido = ListaCompleta[seleccion-1];
@@ -144,6 +147,7 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 {
                     Console.WriteLine(" Escriba el nuevo Nombre y Apellido  ");
                     ListaCompleta[seleccion-1].Nombre = Console.ReadLine();
+                    Console.Clear();
                     Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
                     Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
                     Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
@@ -157,6 +161,7 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 {
                     Console.WriteLine(" Escriba la Nota en números  ");
                     ListaCompleta[seleccion - 1].Nota = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
                     Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
                     Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
                     Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
@@ -170,6 +175,7 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 {
                     Console.WriteLine(" Escriba la Edad en números  ");
                     ListaCompleta[seleccion - 1].Edad = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
                     Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
                     Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
                     Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
@@ -184,6 +190,7 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 {
                     Console.WriteLine(" Escriba la nueva Ciudad  ");
                     ListaCompleta[seleccion - 1].Ciudad = Console.ReadLine();
+                    Console.Clear();
                     Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
                     Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
                     Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
@@ -205,13 +212,6 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
                 Console.WriteLine("     ");
                 EleccionParaEditar = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                Console.WriteLine("     ");
-                Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                Console.ReadKey();
                 Console.Clear();
 
                 if (EleccionParaEditar == 1)
@@ -219,11 +219,27 @@ namespace Ejercicio_de_lectura_de_2_archivos
                     Console.WriteLine(" Escriba el nuevo Nombre y Apellido  ");
                     ListaCompleta[seleccion - 1].Nombre = Console.ReadLine();
                     Console.Clear();
+                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
+                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
+                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
+                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
+                    Console.WriteLine("     ");
+                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 if (EleccionParaEditar == 2)
                 {
                     Console.WriteLine(" Escriba la Nota en números  ");
                     ListaCompleta[seleccion - 1].Nota = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
+                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
+                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
+                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
+                    Console.WriteLine("     ");
+                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                    Console.ReadKey();
                     Console.Clear();
                 }
                 if (EleccionParaEditar == 3)
@@ -231,11 +247,27 @@ namespace Ejercicio_de_lectura_de_2_archivos
                     Console.WriteLine(" Escriba la Edad en números  ");
                     ListaCompleta[seleccion - 1].Edad = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
+                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
+                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
+                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
+                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
+                    Console.WriteLine("     ");
+                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 if (EleccionParaEditar == 4)
                 {
                     Console.WriteLine(" Escriba la nueva Ciudad  ");
                     ListaCompleta[seleccion - 1].Ciudad = Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
+                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
+                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
+                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
+                    Console.WriteLine("     ");
+                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                    Console.ReadKey();
                     Console.Clear();
                 }
             }
@@ -371,8 +403,79 @@ namespace Ejercicio_de_lectura_de_2_archivos
                     Console.Clear();
                 }
             }
+            // Acá me podrías explicar de nuevo eso de los y si aca esto entonces esto
+          */  // (no recuerdo bien pero era como una listita de casos) que nunca me salió usarla
         }
 
+        static void EdiciónDeDatos(Alumno AlumnoElegido)
+        {
+            int EleccionParaEditar;
+                Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
+                Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
+                Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
+                Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
+                Console.WriteLine("     ");
+                EleccionParaEditar = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+
+                if (EleccionParaEditar == 1)
+                {
+                    Console.WriteLine(" Escriba el nuevo Nombre y Apellido  ");
+                    ListaCompleta[seleccion-1].Nombre = Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
+                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
+                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
+                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
+                    Console.WriteLine("     ");
+                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                if (EleccionParaEditar == 2)
+                {
+                    Console.WriteLine(" Escriba la Nota en números  ");
+                    ListaCompleta[seleccion - 1].Nota = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
+                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
+                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
+                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
+                    Console.WriteLine("     ");
+                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                if (EleccionParaEditar == 3)
+                {
+                    Console.WriteLine(" Escriba la Edad en números  ");
+                    ListaCompleta[seleccion - 1].Edad = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
+                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
+                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
+                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
+                    Console.WriteLine("     ");
+                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                    Console.ReadKey();
+                    Console.Clear();
+
+                }
+                if (EleccionParaEditar == 4)
+                {
+                    Console.WriteLine(" Escriba la nueva Ciudad  ");
+                    ListaCompleta[seleccion - 1].Ciudad = Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
+                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
+                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
+                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
+                    Console.WriteLine("     ");
+                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+        }
 
         static void OrdenarAlfabeticamente()
         {
