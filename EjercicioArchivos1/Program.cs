@@ -8,27 +8,70 @@ namespace Ejercicio_de_lectura_de_2_archivos
 
     class Program
     {
-
-        /*
-         * 
-         Funciòn que abre archivo
-        Función que recorra los arrays devueltos y use el NOMBRE (característica igual para unificar los datos) 
-        Acá puedo usar una clase Alumno que se vaya instanciando por cada vuelta del for y complete los datos de cada alumno).
-        Ordenar todas las instancias en un nuevo array tipo Alumno
-         */
-
-
-
-
         static Alumno[] ListaCompleta;
         static string[] Datos1;
         static string[] Datos2;
         static string[] DatosSeparados;
         static string[] DatosSeparados2;
+        static int EleccionDelUsuario = 0;
 
         static void Main(string[] args)
         {
+            while (EleccionDelUsuario != 5)
+            {
+                MenuPrincipal();
 
+                if (EleccionDelUsuario == 1)
+                {
+                    CargarDatos();
+                }
+                if (EleccionDelUsuario == 2)
+                {
+                    OrdenarAlfabeticamente();
+                }
+                if (EleccionDelUsuario == 4)
+                {
+                    ImprimiryGuardar();
+                }
+                if (EleccionDelUsuario == 5)
+                {
+                    break;
+                }
+                Console.Clear();
+            }
+        }
+
+
+
+        public class Alumno
+        {
+            public string Nombre;
+            public int Nota;
+            public int Edad;
+            public string Ciudad;
+        }
+        static void MenuPrincipal()
+        {
+            Console.WriteLine("       ");
+            Console.WriteLine("       ");
+            Console.WriteLine("         Nenú Principal     ");
+            Console.WriteLine("       ");
+            Console.WriteLine("       ");
+            Console.WriteLine("   Presione 1 para Cargar datos de archivo   ");
+            Console.WriteLine("       ");
+            Console.WriteLine("   Presione 2 para Ver la lista de datos en orden alfabético      ");
+            Console.WriteLine("       ");
+            Console.WriteLine("   Presione 3 para Agregar Alumnos nuevos   ");
+            Console.WriteLine("       ");
+            Console.WriteLine("   Presione 4 para ver el listado y Guardar los datos   ");
+            Console.WriteLine("       ");
+            Console.WriteLine("   Presione 5 para salir   ");
+
+            EleccionDelUsuario = Convert.ToInt32(Console.ReadLine());
+        }
+
+        static void CargarDatos()
+        {
             String Archivo = "C:\\Users\\matia\\Source\\Repos\\fczyrka\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\datos1.txt";
             Datos1 = File.ReadAllLines(Archivo);
             String Archivo2 = "C:\\Users\\matia\\Source\\Repos\\fczyrka\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\datos2.txt";
@@ -69,47 +112,52 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 }
             }
 
-            // imprimir el alumno de mayor edad
-
-            OrdenarAlfabeticamente();
-            ImprimiryGuardar();
-
         }
 
-
-
-        public class Alumno
-        {
-            public string Nombre;
-            public int Nota;
-            public int Edad;
-            public string Ciudad;
-        }
 
         static void OrdenarAlfabeticamente()
         {
             // en este primer for, la variable no la vamos a usar, es solo para que de las suficientes vueltas y en cada vuelta se haga lo del for que está dentro
-            for (int i = 0; i < ListaCompleta.Length;i++) 
+            for (int i = 0; i < ListaCompleta.Length; i++)
             {
                 // acá hago hasta -2 porque voy a comparar con el siguiente, entonces sinó me fallaría al final
-                for (int posicionAComparar = 0; posicionAComparar < ListaCompleta.Length - 2;posicionAComparar++)
+                for (int posicionAComparar = 0; posicionAComparar < ListaCompleta.Length - 2; posicionAComparar++)
                 {
                     //acá pongo directamente los arrays porque me queda mas claro, porque sinó es mas dificil de entender
-                    if (ListaCompleta[posicionAComparar].Nombre.CompareTo(ListaCompleta[posicionAComparar+1].Nombre) > 0)
+                    if (ListaCompleta[posicionAComparar].Nombre.CompareTo(ListaCompleta[posicionAComparar + 1].Nombre) > 0)
                     {
-                        Alumno Temporal = ListaCompleta[posicionAComparar+1];
-                        ListaCompleta[posicionAComparar+1] = ListaCompleta[posicionAComparar];
+                        Alumno Temporal = ListaCompleta[posicionAComparar + 1];
+                        ListaCompleta[posicionAComparar + 1] = ListaCompleta[posicionAComparar];
                         ListaCompleta[posicionAComparar] = Temporal;
 
-                        /*
-                         * Esto no va, es medio un parche que armaste por como armaste la lógica, no está mal, pero medio que lo supercomplicaste
-                        AlumnoActual = AlumnoConElQueComparo; // Acá me costò darme cuenta de cambiar el AlumnoAcutal (osea el que toma para compararlo con los otros)
-                                                              // una vez que lo reubicó.  Porque me lo seguía comparando y me salían resultados repetidos
-                        */
+
                     }
-                }
+                }      
             }
+            ImprimirListado();
         }
+        static void ImprimirListado()
+        {
+            Console.WriteLine("      ");
+            Console.WriteLine("      ");
+            Console.WriteLine("               Listado de Estudiantes ");
+            Console.WriteLine("      ");
+            Console.WriteLine("      ");
+            for (int vueltas = 0; vueltas < ListaCompleta.Length; vueltas++)
+            {
+                Console.WriteLine("    Estudiante:   " + ListaCompleta[vueltas].Nombre);
+                Console.WriteLine("    Calificación: " + ListaCompleta[vueltas].Nota);
+                Console.WriteLine("    Edad:         " + ListaCompleta[vueltas].Edad + " años ");
+                Console.WriteLine("    Ciudad:       " + ListaCompleta[vueltas].Ciudad);
+                Console.WriteLine("      ");
+                Console.WriteLine("    ---------------------------------     ");
+            }
+            Console.WriteLine("   ");
+            Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+            Console.ReadKey();
+        }
+
+    
 
         static void ImprimiryGuardar()
         {

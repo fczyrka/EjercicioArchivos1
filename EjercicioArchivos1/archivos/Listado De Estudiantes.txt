@@ -3,6 +3,18 @@
                Listado de Estudiantes 
       
       
+    Estudiante:   Carlos Rodríguez
+    Calificación: 78
+    Edad:         19 años 
+    Ciudad:       Barcelona
+      
+    ---------------------------------     
+    Estudiante:   Juan Pérez
+    Calificación: 85
+    Edad:         20 años 
+    Ciudad:       Madrid
+      
+    ---------------------------------     
     Estudiante:   María Gómez
     Calificación: 92
     Edad:         0 años 
@@ -13,17 +25,5 @@
     Calificación: 95
     Edad:         21 años 
     Ciudad:       Sevilla
-      
-    ---------------------------------     
-    Estudiante:   Juan Pérez
-    Calificación: 85
-    Edad:         20 años 
-    Ciudad:       Madrid
-      
-    ---------------------------------     
-    Estudiante:   Carlos Rodríguez
-    Calificación: 78
-    Edad:         19 años 
-    Ciudad:       Barcelona
       
     ---------------------------------     
