@@ -129,351 +129,81 @@ namespace Ejercicio_de_lectura_de_2_archivos
             seleccion = Convert.ToInt32(Console.ReadLine());
             Alumno AlumnoElegido = ListaCompleta[seleccion - 1];
             Console.Clear();
-            EdiciónDeDatos(AlumnoElegido);
-           /* 
-            if (seleccion == 1)
-            {
-                Alumno AlumnoElegido = ListaCompleta[seleccion-1];
-                int EleccionParaEditar;
-                Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                Console.WriteLine("     ");
-                EleccionParaEditar = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-
-                if (EleccionParaEditar == 1)
-                {
-                    Console.WriteLine(" Escriba el nuevo Nombre y Apellido  ");
-                    ListaCompleta[seleccion-1].Nombre = Console.ReadLine();
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 2)
-                {
-                    Console.WriteLine(" Escriba la Nota en números  ");
-                    ListaCompleta[seleccion - 1].Nota = Convert.ToInt32(Console.ReadLine());
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 3)
-                {
-                    Console.WriteLine(" Escriba la Edad en números  ");
-                    ListaCompleta[seleccion - 1].Edad = Convert.ToInt32(Console.ReadLine());
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-
-                }
-                if (EleccionParaEditar == 4)
-                {
-                    Console.WriteLine(" Escriba la nueva Ciudad  ");
-                    ListaCompleta[seleccion - 1].Ciudad = Console.ReadLine();
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-            }
-
-            if (seleccion == 2)
-            {
-                Alumno AlumnoElegido = ListaCompleta[seleccion - 1];
-                int EleccionParaEditar;
-                Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                Console.WriteLine("     ");
-                EleccionParaEditar = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-
-                if (EleccionParaEditar == 1)
-                {
-                    Console.WriteLine(" Escriba el nuevo Nombre y Apellido  ");
-                    ListaCompleta[seleccion - 1].Nombre = Console.ReadLine();
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 2)
-                {
-                    Console.WriteLine(" Escriba la Nota en números  ");
-                    ListaCompleta[seleccion - 1].Nota = Convert.ToInt32(Console.ReadLine());
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 3)
-                {
-                    Console.WriteLine(" Escriba la Edad en números  ");
-                    ListaCompleta[seleccion - 1].Edad = Convert.ToInt32(Console.ReadLine());
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 4)
-                {
-                    Console.WriteLine(" Escriba la nueva Ciudad  ");
-                    ListaCompleta[seleccion - 1].Ciudad = Console.ReadLine();
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-            }
-
-            if (seleccion == 3)
-            {
-                Alumno AlumnoElegido = ListaCompleta[seleccion - 1];
-                int EleccionParaEditar;
-                Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                Console.WriteLine("     ");
-                EleccionParaEditar = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-
-                if (EleccionParaEditar == 1)
-                {
-                    Console.WriteLine(" Escriba el nuevo Nombre y Apellido  ");
-                    ListaCompleta[seleccion - 1].Nombre = Console.ReadLine();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 2)
-                {
-                    Console.WriteLine(" Escriba la Nota en números  ");
-                    ListaCompleta[seleccion - 1].Nota = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 3)
-                {
-                    Console.WriteLine(" Escriba la Edad en números  ");
-                    ListaCompleta[seleccion - 1].Edad = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 4)
-                {
-                    Console.WriteLine(" Escriba la nueva Ciudad  ");
-                    ListaCompleta[seleccion - 1].Ciudad = Console.ReadLine();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-            }
-
-            if (seleccion == 4)
-            {
-                Alumno AlumnoElegido = ListaCompleta[seleccion - 1];
-                int EleccionParaEditar;
-                Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                Console.WriteLine("     ");
-                EleccionParaEditar = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-
-                if (EleccionParaEditar == 1)
-                {
-                    Console.WriteLine(" Escriba el nuevo Nombre y Apellido  ");
-                    ListaCompleta[seleccion - 1].Nombre = Console.ReadLine();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 2)
-                {
-                    Console.WriteLine(" Escriba la Nota en números  ");
-                    ListaCompleta[seleccion - 1].Nota = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 3)
-                {
-                    Console.WriteLine(" Escriba la Edad en números  ");
-                    ListaCompleta[seleccion - 1].Edad = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 4)
-                {
-                    Console.WriteLine(" Escriba la nueva Ciudad  ");
-                    ListaCompleta[seleccion - 1].Ciudad = Console.ReadLine();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-            }
-            // Acá me podrías explicar de nuevo eso de los y si aca esto entonces esto
-          */  // (no recuerdo bien pero era como una listita de casos) que nunca me salió usarla
+            EdiciónDeParametros(AlumnoElegido);
+          
         }
 
-        static void EdiciónDeDatos(Alumno AlumnoElegido)
+        static void EdiciónDeParametros(Alumno AlumnoElegido)
         {
             int EleccionParaEditar;
-                Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                Console.WriteLine("     ");
-                EleccionParaEditar = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
+            string[] Opciones = { "Nombre", "Nota", "Edad", "Ciudad" };
 
-                if (EleccionParaEditar == 1)
+            for (int i = 0; i < Opciones.Length; i++)
+            {
+                Console.WriteLine(" Presione " + (i+1) + " para editar " + Opciones[i]);
+            }
+            EleccionParaEditar = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+
+
+            if (EleccionParaEditar == 1)
+            {
+                Console.WriteLine(" Escriba el nuevo Nombre y Apellido  ");
+                AlumnoElegido.Nombre = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine(Opciones[0] + " " + AlumnoElegido.Nombre);
+                Console.WriteLine(Opciones[1] + " " + AlumnoElegido.Nota);
+                Console.WriteLine(Opciones[2] + " " + AlumnoElegido.Edad);
+                Console.WriteLine(Opciones[3] + " " + AlumnoElegido.Ciudad);
+                Console.WriteLine("    ");
+                Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                Console.ReadKey();
+                Console.Clear();
+            }
+
+            if (EleccionParaEditar == 2)
                 {
-                    Console.WriteLine(" Escriba el nuevo Nombre y Apellido  ");
-                    ListaCompleta[seleccion-1].Nombre = Console.ReadLine();
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (EleccionParaEditar == 2)
-                {
-                    Console.WriteLine(" Escriba la Nota en números  ");
-                    ListaCompleta[seleccion - 1].Nota = Convert.ToInt32(Console.ReadLine());
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
+                Console.WriteLine(" Escriba la nueva Calificación  ");
+                AlumnoElegido.Nota = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+                Console.WriteLine(Opciones[0] + " " + AlumnoElegido.Nombre);
+                Console.WriteLine(Opciones[1] + " " + AlumnoElegido.Nota);
+                Console.WriteLine(Opciones[2] + " " + AlumnoElegido.Edad);
+                Console.WriteLine(Opciones[3] + " " + AlumnoElegido.Ciudad);
+                Console.WriteLine("    ");
+                Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                Console.ReadKey();
+                Console.Clear();
+            }
                 if (EleccionParaEditar == 3)
                 {
-                    Console.WriteLine(" Escriba la Edad en números  ");
-                    ListaCompleta[seleccion - 1].Edad = Convert.ToInt32(Console.ReadLine());
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
+                Console.WriteLine(" Escriba la Edad del Alumno/a  ");
+                AlumnoElegido.Edad = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+                Console.WriteLine(Opciones[0] + " " + AlumnoElegido.Nombre);
+                Console.WriteLine(Opciones[1] + " " + AlumnoElegido.Nota);
+                Console.WriteLine(Opciones[2] + " " + AlumnoElegido.Edad);
+                Console.WriteLine(Opciones[3] + " " + AlumnoElegido.Ciudad);
+                Console.WriteLine("    ");
+                Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                Console.ReadKey();
+                Console.Clear();
 
-                }
+            }
                 if (EleccionParaEditar == 4)
                 {
-                    Console.WriteLine(" Escriba la nueva Ciudad  ");
-                    ListaCompleta[seleccion - 1].Ciudad = Console.ReadLine();
-                    Console.Clear();
-                    Console.WriteLine(" Presione 1 para editar Nombre " + AlumnoElegido.Nombre);
-                    Console.WriteLine(" Presione 2 para editar Nota " + AlumnoElegido.Nota);
-                    Console.WriteLine(" Presione 3 para editar Edad " + AlumnoElegido.Edad);
-                    Console.WriteLine(" Presione 4 para editar Ciudad " + AlumnoElegido.Ciudad);
-                    Console.WriteLine("     ");
-                    Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                    Console.ReadKey();
-                    Console.Clear();
+                Console.WriteLine(" Escriba la nueva Ciudad  ");
+                AlumnoElegido.Nombre = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine(Opciones[0] + " " + AlumnoElegido.Nombre);
+                Console.WriteLine(Opciones[1] + " " + AlumnoElegido.Nota);
+                Console.WriteLine(Opciones[2] + " " + AlumnoElegido.Edad);
+                Console.WriteLine(Opciones[3] + " " + AlumnoElegido.Ciudad);
+                Console.WriteLine("    ");
+                Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+                Console.ReadKey();
+                Console.Clear();
+                Console.Clear();
                 }
         }
 
