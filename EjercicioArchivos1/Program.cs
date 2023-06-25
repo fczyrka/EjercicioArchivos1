@@ -131,11 +131,19 @@ namespace Ejercicio_de_lectura_de_2_archivos
             Console.Clear();
             EdiciónDeParametros(AlumnoElegido);
           
+            // MATI:, y si le agregás que luego de modificar datos te lo guarde en los archivos datos1 y datos2 ? para luego poder volver a cargarlos con la info nueva?
+            // ojo que hay que separar los datos como están separados en los dos archivos y respetando el formato de las comas
         }
+
 
         static void EdiciónDeParametros(Alumno AlumnoElegido)
         {
             int EleccionParaEditar;
+            // MATI: esto en un array no se en que te ayuda, creo que confunde un poco, y no hay nada que cambie entre usar un array o directamente las constantes
+            // no lo cambies, total es un detalle, pero quería mencionarlo porque a veces uno se sobrecomplica, la idea
+            // no es usar todo lo mas rebuscado posible, sinó usar todo lo mas práctico posible, de última al comienzo podés plantear una solución
+            // mas sencilla y luego ir mejorando (como hiciste con lo de que primero tenías muchas veces duplicado lo de ingresar
+            // los datos y luego lo metiste todo en una función y quedó mas entendible)
             string[] Opciones = { "Nombre", "Nota", "Edad", "Ciudad" };
 
             for (int i = 0; i < Opciones.Length; i++)
@@ -150,61 +158,37 @@ namespace Ejercicio_de_lectura_de_2_archivos
             {
                 Console.WriteLine(" Escriba el nuevo Nombre y Apellido  ");
                 AlumnoElegido.Nombre = Console.ReadLine();
-                Console.Clear();
-                Console.WriteLine(Opciones[0] + " " + AlumnoElegido.Nombre);
-                Console.WriteLine(Opciones[1] + " " + AlumnoElegido.Nota);
-                Console.WriteLine(Opciones[2] + " " + AlumnoElegido.Edad);
-                Console.WriteLine(Opciones[3] + " " + AlumnoElegido.Ciudad);
-                Console.WriteLine("    ");
-                Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                Console.ReadKey();
-                Console.Clear();
             }
 
             if (EleccionParaEditar == 2)
-                {
+            {
                 Console.WriteLine(" Escriba la nueva Calificación  ");
                 AlumnoElegido.Nota = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-                Console.WriteLine(Opciones[0] + " " + AlumnoElegido.Nombre);
-                Console.WriteLine(Opciones[1] + " " + AlumnoElegido.Nota);
-                Console.WriteLine(Opciones[2] + " " + AlumnoElegido.Edad);
-                Console.WriteLine(Opciones[3] + " " + AlumnoElegido.Ciudad);
-                Console.WriteLine("    ");
-                Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                Console.ReadKey();
-                Console.Clear();
             }
-                if (EleccionParaEditar == 3)
-                {
+
+            if (EleccionParaEditar == 3)
+            {
                 Console.WriteLine(" Escriba la Edad del Alumno/a  ");
                 AlumnoElegido.Edad = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-                Console.WriteLine(Opciones[0] + " " + AlumnoElegido.Nombre);
-                Console.WriteLine(Opciones[1] + " " + AlumnoElegido.Nota);
-                Console.WriteLine(Opciones[2] + " " + AlumnoElegido.Edad);
-                Console.WriteLine(Opciones[3] + " " + AlumnoElegido.Ciudad);
-                Console.WriteLine("    ");
-                Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                Console.ReadKey();
-                Console.Clear();
-
             }
-                if (EleccionParaEditar == 4)
-                {
+
+            if (EleccionParaEditar == 4)
+            {
                 Console.WriteLine(" Escriba la nueva Ciudad  ");
                 AlumnoElegido.Nombre = Console.ReadLine();
-                Console.Clear();
-                Console.WriteLine(Opciones[0] + " " + AlumnoElegido.Nombre);
-                Console.WriteLine(Opciones[1] + " " + AlumnoElegido.Nota);
-                Console.WriteLine(Opciones[2] + " " + AlumnoElegido.Edad);
-                Console.WriteLine(Opciones[3] + " " + AlumnoElegido.Ciudad);
-                Console.WriteLine("    ");
-                Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
-                Console.ReadKey();
-                Console.Clear();
-                Console.Clear();
-                }
+            }
+
+            // MATI: en este caso estas lineas de impresión se repetían en cada if, me parece mejor simplemente ponerlas una sola vez al final
+
+            Console.Clear();
+            Console.WriteLine(Opciones[0] + " " + AlumnoElegido.Nombre);
+            Console.WriteLine(Opciones[1] + " " + AlumnoElegido.Nota);
+            Console.WriteLine(Opciones[2] + " " + AlumnoElegido.Edad);
+            Console.WriteLine(Opciones[3] + " " + AlumnoElegido.Ciudad);
+            Console.WriteLine("    ");
+            Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         static void OrdenarAlfabeticamente()
@@ -228,6 +212,7 @@ namespace Ejercicio_de_lectura_de_2_archivos
             }
             ImprimirListado();
         }
+
         static void ImprimirListado()
         {
             Console.WriteLine("      ");
@@ -248,8 +233,6 @@ namespace Ejercicio_de_lectura_de_2_archivos
             Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
             Console.ReadKey();
         }
-
-    
 
         static void ImprimiryGuardar()
         {
