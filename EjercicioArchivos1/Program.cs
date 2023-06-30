@@ -129,10 +129,9 @@ namespace Ejercicio_de_lectura_de_2_archivos
             seleccion = Convert.ToInt32(Console.ReadLine());
             Alumno AlumnoElegido = ListaCompleta[seleccion - 1];
             Console.Clear();
+
             EdiciónDeParametros(AlumnoElegido);
           
-            // MATI:, y si le agregás que luego de modificar datos te lo guarde en los archivos datos1 y datos2 ? para luego poder volver a cargarlos con la info nueva?
-            // ojo que hay que separar los datos como están separados en los dos archivos y respetando el formato de las comas
         }
 
 
