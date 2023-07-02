@@ -13,30 +13,31 @@ namespace Ejercicio_de_lectura_de_2_archivos
         static string[] Datos2;
         static string[] DatosSeparados;
         static string[] DatosSeparados2;
-        static int EleccionDelUsuario = 0;
+        static string EleccionDelUsuario;
         static int seleccion = 0;
 
         static void Main(string[] args)
         {
             CargarDatos();
 
-            while (EleccionDelUsuario != 5)
+            while (EleccionDelUsuario != "5")
             {
+                EleccionDelUsuario = "0";
                 MenuPrincipal();
 
-                if (EleccionDelUsuario == 1)
+                if (EleccionDelUsuario == "1")
                 {
                     ModificarDatos();
                 }
-                if (EleccionDelUsuario == 2)
+                if (EleccionDelUsuario == "2")
                 {
                     OrdenarAlfabeticamente();
                 }
-                if (EleccionDelUsuario == 4)
+                if (EleccionDelUsuario == "4")
                 {
                     ImprimiryGuardar();
                 }
-                if (EleccionDelUsuario == 5)
+                if (EleccionDelUsuario == "5")
                 {
                     Console.Clear();
                     break;
@@ -70,8 +71,19 @@ namespace Ejercicio_de_lectura_de_2_archivos
             Console.WriteLine("   Presione 4 para ver el listado y Guardar los datos   ");
             Console.WriteLine("       ");
             Console.WriteLine("   Presione 5 para salir   ");
-
-            EleccionDelUsuario = Convert.ToInt32(Console.ReadLine());
+            
+            // Fi acá me gustaría hacer un bucle (tipo while) para que no se trabe si apretás algo que sea número.
+            // El tema es que no se me ocurre como ponerle algo tipo si es distinto a número (osea si puedo poner while == 0 !! > 5)
+            // pero si apretan otra tecla por accidente se pincha (me pasó) 
+            while (EleccionDelUsuario != "1" && EleccionDelUsuario != "2" && EleccionDelUsuario != "3" && EleccionDelUsuario != "4" && EleccionDelUsuario != "5")
+            {
+            Console.WriteLine("    ");
+            Console.WriteLine("    ");
+            Console.WriteLine("Seleccione una opción disponible");
+            EleccionDelUsuario = Console.ReadLine();
+            Console.Clear();
+           
+            }
         }
 
         static void CargarDatos()
@@ -225,6 +237,7 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 }
             }
             ImprimirListado();
+            
         }
 
             static void ImprimirListado()
