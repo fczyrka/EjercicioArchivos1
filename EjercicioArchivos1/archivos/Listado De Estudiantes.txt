@@ -17,8 +17,8 @@
     ---------------------------------     
     Estudiante:   María Gómez
     Calificación: 92
-    Edad:         0 años 
-    Ciudad:       
+    Edad:         23 años 
+    Ciudad:       Córdoba
       
     ---------------------------------     
     Estudiante:   Laura Sánchez
