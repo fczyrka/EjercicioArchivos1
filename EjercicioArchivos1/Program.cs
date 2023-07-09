@@ -33,6 +33,11 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 {
                     OrdenarAlfabeticamente();
                 }
+                if (EleccionDelUsuario == "3")
+                {
+                    AgregarAlumnoNuevo();
+                    CargarDatos();
+                }
                 if (EleccionDelUsuario == "4")
                 {
                     ImprimiryGuardar();
@@ -149,8 +154,7 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 {
                     writer.WriteLine(ListaCompleta[i].Nombre + "," + ListaCompleta[i].Nota);
                 }
-                // MATI:, y si le agregás que luego de modificar datos te lo guarde en los archivos datos1 y datos2 ? para luego poder volver a cargarlos con la info nueva?
-                // ojo que hay que separar los datos como están separados en los dos archivos y respetando el formato de las comas
+                
                 writer.Close();
             }
             using (StreamWriter writer = new StreamWriter("C:\\Users\\matia\\Source\\Repos\\fczyrka\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\datos2.txt"))
@@ -231,6 +235,53 @@ namespace Ejercicio_de_lectura_de_2_archivos
             }
             ImprimirListado();
             
+        }
+
+        static void AgregarAlumnoNuevo()
+        {
+         Alumno NuevoAlumno = new Alumno();
+
+            Console.WriteLine(" Ingrese el Nombre del Alumno nuevo ");
+            NuevoAlumno.Nombre = Console.ReadLine();
+            Console.WriteLine(" ");
+            Console.WriteLine(" Ingrese la Nota del Alumno nuevo ");
+            NuevoAlumno.Nota = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(" ");
+            Console.WriteLine(" Ingrese la Edad del Alumno nuevo ");
+            NuevoAlumno.Edad = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(" ");
+            Console.WriteLine(" Ingrese la Ciudad del Alumno nuevo ");
+            NuevoAlumno.Ciudad = Console.ReadLine();
+            Console.WriteLine(" ");
+
+            Alumno[] ListaParaAgregar = new Alumno[(ListaCompleta.Length + 1)];
+            for (int i = 0; i < ListaCompleta.Length; i++)
+            {
+                ListaParaAgregar[i] = ListaCompleta[i];
+            }
+            ListaParaAgregar[ListaParaAgregar.Length-1] = NuevoAlumno;
+
+            using (StreamWriter writer = new StreamWriter("C:\\Users\\matia\\Source\\Repos\\fczyrka\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\datos1.txt"))
+            {
+                for (int i = 0; i < ListaParaAgregar.Length ; i++)
+                {
+                    writer.WriteLine(ListaParaAgregar[i].Nombre + "," + ListaParaAgregar[i].Nota);
+                }
+
+                writer.Close();
+            }
+            using (StreamWriter writer = new StreamWriter("C:\\Users\\matia\\Source\\Repos\\fczyrka\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\datos2.txt"))
+            {
+                for (int i = 0; i < (ListaParaAgregar.Length); i++)
+                {
+                    writer.WriteLine(ListaParaAgregar[i].Nombre + "," + ListaParaAgregar[i].Edad + "," + ListaParaAgregar[i].Ciudad);
+                }
+                writer.Close();
+            }
+            Console.WriteLine("   ");
+            Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
+            Console.ReadKey();
+
         }
 
             static void ImprimirListado()
