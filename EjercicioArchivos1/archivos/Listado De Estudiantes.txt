@@ -4,26 +4,32 @@
       
       
     Estudiante:   Carlos Rodríguez
-    Calificación: 78
+    Calificación: 88
     Edad:         19 años 
     Ciudad:       Barcelona
       
     ---------------------------------     
     Estudiante:   Juan Pérez
-    Calificación: 85
+    Calificación: 98
     Edad:         20 años 
     Ciudad:       Madrid
-      
-    ---------------------------------     
-    Estudiante:   María Gómez
-    Calificación: 92
-    Edad:         0 años 
-    Ciudad:       
       
     ---------------------------------     
     Estudiante:   Laura Sánchez
     Calificación: 95
     Edad:         21 años 
     Ciudad:       Sevilla
+      
+    ---------------------------------     
+    Estudiante:   María Gómez
+    Calificación: 92
+    Edad:         23 años 
+    Ciudad:       Córdoba
+      
+    ---------------------------------     
+    Estudiante:   Pepe Diaz
+    Calificación: 43
+    Edad:         24 años 
+    Ciudad:       Valencia
       
     ---------------------------------     
