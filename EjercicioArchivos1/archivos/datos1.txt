@@ -1,5 +1,5 @@
-Juan Pérez,98
-María Gómez,92
-Carlos Rodríguez,88
-Laura Sánchez,95
-Pepe Diaz,43
+Juan Pérez,88
+María Gómez,73
+Carlos Rodríguez,95
+Laura Sánchez,53
+Pepe Diaz,77

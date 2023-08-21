@@ -20,7 +20,7 @@ namespace Ejercicio_de_lectura_de_2_archivos
         {
             CargarDatos();
 
-            while (EleccionDelUsuario != "5")
+            while (EleccionDelUsuario != "6")
             {
                 EleccionDelUsuario = "0";
                 MenuPrincipal();
@@ -40,9 +40,14 @@ namespace Ejercicio_de_lectura_de_2_archivos
                 }
                 if (EleccionDelUsuario == "4")
                 {
-                    ImprimiryGuardar();
+                    EliminarAlumno();
+                    
                 }
                 if (EleccionDelUsuario == "5")
+                {
+                    ImprimiryGuardar();
+                }
+                if (EleccionDelUsuario == "6")
                 {
                     Console.Clear();
                     break;
@@ -73,13 +78,13 @@ namespace Ejercicio_de_lectura_de_2_archivos
             Console.WriteLine("       ");
             Console.WriteLine("   Presione 3 para Agregar Alumnos nuevos   ");
             Console.WriteLine("       ");
-            Console.WriteLine("   Presione 4 para ver el listado y Guardar los datos   ");
+            Console.WriteLine("   Presione 4 para Eliminar un Alumnos   ");
             Console.WriteLine("       ");
-            Console.WriteLine("   Presione 5 para salir   ");
+            Console.WriteLine("   Presione 5 para ver el listado y Guardar los datos   ");
+            Console.WriteLine("       ");
+            Console.WriteLine("   Presione 6 para salir   ");
             
-            // Fi acá me gustaría hacer un bucle (tipo while) para que no se trabe si apretás algo que sea número.
-            // El tema es que no se me ocurre como ponerle algo tipo si es distinto a número (osea si puedo poner while == 0 !! > 5)
-            // pero si apretan otra tecla por accidente se pincha (me pasó) 
+            
             while (EleccionDelUsuario != "1" && EleccionDelUsuario != "2" && EleccionDelUsuario != "3" && EleccionDelUsuario != "4" && EleccionDelUsuario != "5")
             {
             Console.WriteLine("    ");
@@ -282,6 +287,56 @@ namespace Ejercicio_de_lectura_de_2_archivos
             Console.WriteLine("      Presione cualquier tecla para volver al menú    ");
             Console.ReadKey();
 
+        }
+
+        static void EliminarAlumno()
+        {
+            Console.Clear();
+            for (int i = 0; i < ListaCompleta.Length; i++)
+            {
+                Console.WriteLine(" Presione " + (i + 1) + " para eliminar a " + ListaCompleta[i].Nombre);
+            }
+
+            seleccion = Convert.ToInt32(Console.ReadLine());
+            Alumno AlumnoEnblanco = new Alumno();
+            ListaCompleta[seleccion - 1] = AlumnoEnblanco;
+            for (int i = 0; i < ListaCompleta.Length;i++)
+            {
+                if (ListaCompleta[i] == AlumnoEnblanco && i == ListaCompleta.Length-1)
+                {
+                    break;
+                }
+                if (ListaCompleta[i] == AlumnoEnblanco && i < ListaCompleta.Length)
+                {
+
+                    int contador = i;
+                    ListaCompleta[i] = ListaCompleta[contador + 1];
+                    ListaCompleta[contador] = AlumnoEnblanco;
+                }               
+            }
+            using (StreamWriter writer = new StreamWriter("C:\\Users\\matia\\Source\\Repos\\fczyrka\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\datos1.txt"))
+            {
+                for (int i = 0; i < ListaCompleta.Length; i++)
+                {
+                    if (ListaCompleta[i] != AlumnoEnblanco)
+                    {
+                        writer.WriteLine(ListaCompleta[i].Nombre + "," + ListaCompleta[i].Nota);
+                    }
+                }
+
+                writer.Close();
+            }
+            using (StreamWriter writer = new StreamWriter("C:\\Users\\matia\\Source\\Repos\\fczyrka\\EjercicioArchivos1\\EjercicioArchivos1\\archivos\\datos2.txt"))
+            {
+                for (int i = 0; i < ListaCompleta.Length; i++)
+                {
+                    if (ListaCompleta[i] != AlumnoEnblanco)
+                    {
+                        writer.WriteLine(ListaCompleta[i].Nombre + "," + ListaCompleta[i].Edad + "," + ListaCompleta[i].Ciudad);
+                    }
+                }
+                writer.Close();
+            }
         }
 
             static void ImprimirListado()
